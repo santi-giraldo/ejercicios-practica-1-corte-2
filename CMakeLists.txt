@@ -1,9 +1,9 @@
 cmake_minimum_required(VERSION 3.10)
 
 # Nombre global del proyecto
-project(Corte2_Entregable2_Ejercicios)
+project(ejercicios-practica-1-corte-2)
 
-# Configurar estándar de C++
+# Configurar estándar 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
