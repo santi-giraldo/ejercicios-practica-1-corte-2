@@ -26,7 +26,7 @@ public:
     }
 };
 int main() {
-    cout << "Iniciando Sistema de Parqueo..." << endl;
+    cout << "Iniciando Sistema de Parqueo" << endl;
     
     ParkingSystem* parkingSystem = new ParkingSystem(1, 1, 0);
     
