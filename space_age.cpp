@@ -30,7 +30,7 @@ int main() {
     double seconds = 1000000000.0;
     SpaceAge age(seconds);
 
-    cout << "--- Calculadora de Edad Espacial ---" << endl;
+    cout << "Calculadora de Edad Espacial" << endl;
     cout << "Edad en segundos: " << fixed << setprecision(0) << seconds << endl;
     cout << fixed << setprecision(2); 
     cout << "Edad en la Tierra: " << age.onEarth() << " años terrestres." << endl;
