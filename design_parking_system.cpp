@@ -5,8 +5,6 @@ using namespace std;
 
 class ParkingSystem {
 private:
-    // array para guardar espacios disponibles:
-    // index 0 -> vacio (no se usa)
     // index 1 -> big (grande)
     // index 2 -> medium (mediano)
     // index 3 -> small (pequeño)
@@ -27,12 +25,9 @@ public:
         return false;
     }
 };
-
-// Función principal para probar el código
 int main() {
     cout << "Iniciando Sistema de Parqueo..." << endl;
     
-    // Crear el sistema con 1 espacio grande, 1 mediano y 0 pequeños
     ParkingSystem* parkingSystem = new ParkingSystem(1, 1, 0);
     
     cout << "Intentando parquear carro grande (1): " << (parkingSystem->addCar(1) ? "true" : "false") << endl;
