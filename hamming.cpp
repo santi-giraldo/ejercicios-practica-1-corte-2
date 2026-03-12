@@ -3,8 +3,6 @@
 #include <stdexcept>
 
 using namespace std;
-
-// Función para calcular la Distancia de Hamming entre dos cadenas de ADN
 int computeHammingDistance(const string& strand1, const string& strand2) {
     // 1. Validar que las longitudes sean iguales
     if (strand1.length() != strand2.length()) {
@@ -12,8 +10,6 @@ int computeHammingDistance(const string& strand1, const string& strand2) {
     }
 
     int distance = 0;
-
-    // 2. Iterar sobre los caracteres y contar las diferencias
     for (size_t i = 0; i < strand1.length(); ++i) {
         if (strand1[i] != strand2[i]) {
             distance++;
@@ -25,25 +21,31 @@ int computeHammingDistance(const string& strand1, const string& strand2) {
 }
 
 int main() {
-    // Caso de prueba basado en la imagen
-    string dna1 = "GAGCCTACTAACGGGAT";
-    string dna2 = "CATCGTAATGACGGCCT";
-
     cout << "--- Calculadora de Distancia de Hamming ---" << endl;
-    cout << "Cadena 1: " << dna1 << endl;
-    cout << "Cadena 2: " << dna2 << endl;
 
+    // Caso 1:
+    string dna1_a = "GAGCCTACTAACGGGAT";
+    string dna1_b = "CATCGTAATGACGGCCT";
+    cout << "Caso 1 -> Distancia: " << computeHammingDistance(dna1_a, dna1_b) << " (Esperado: 7)" << endl;
+
+    // Caso 2
+    string dna2_a = "GATTACA";
+    string dna2_b = "GACTATA";
+    cout << "Caso 2 -> Distancia: " << computeHammingDistance(dna2_a, dna2_b) << " (Esperado: 2)" << endl;
+
+    // Caso 3
+    string dna3_a = "GGACGATCGC";
+    string dna3_b = "AGACAATCTC";
+    cout << "Caso 3 -> Distancia: " << computeHammingDistance(dna3_a, dna3_b) << " (Esperado: 3)" << endl;
+
+    // Caso 4
     try {
-        int distance = computeHammingDistance(dna1, dna2);
-        cout << "La Distancia de Hamming es: " << distance << endl; // Debe ser 7
-        
-        // Prueba de manejo de error (longitudes diferentes)
-        cout << "\nProbando con cadenas de diferente longitud:" << endl;
+        cout << "\nProbando error con diferentes longitudes..." << endl;
         computeHammingDistance("GATC", "GAT");
     } catch (const invalid_argument& e) {
-        // Se captura el error si las cadenas tienen diferente tamaño
-        cerr << "Error: " << e.what() << endl;
+        cout << "Error capturado correctamente: " << e.what() << endl;
     }
 
     return 0;
 }
+
