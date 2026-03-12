@@ -3,7 +3,6 @@
 
 using namespace std;
 
-// Función para determinar si un número es un número de Armstrong
 bool isArmstrong(int number) {
     if (number < 0) return false; // Los números negativos no son de Armstrong
     
@@ -21,12 +20,12 @@ bool isArmstrong(int number) {
     // Si el número era 0, tiene 1 dígito
     if (number == 0) numDigits = 1;
 
-    // 2. Extraer cada dígito, elevarlo a 'numDigits' y sumarlo
+    // 2. Extraer cada dígito
     temp = number;
     while (temp > 0) {
-        int digit = temp % 10;           // Obtener el último dígito
-        sum += pow(digit, numDigits);    // Elevar a la potencia y sumar
-        temp /= 10;                      // Eliminar el último dígito
+        int digit = temp % 10;          
+        sum += pow(digit, numDigits);    
+        temp /= 10;                      
     }
     
     // 3. Verificar si la suma es igual al número original
@@ -34,7 +33,8 @@ bool isArmstrong(int number) {
 }
 
 int main() {
-    // Casos de prueba basados en tu imagen
+    
+    //Caso de  prueba
     int testCases[] = {9, 10, 153, 154};
     
     cout << "--- Verificador de Numeros de Armstrong ---" << endl;
