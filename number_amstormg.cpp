@@ -37,7 +37,7 @@ int main() {
     //Caso de  prueba
     int testCases[] = {9, 10, 153, 154};
     
-    cout << "--- Verificador de Numeros de Armstrong ---" << endl;
+    cout << "Verificador de Numeros de Armstrong" << endl;
     
     for (int num : testCases) {
         if (isArmstrong(num)) {
